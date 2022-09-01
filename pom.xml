@@ -6,8 +6,8 @@
 	<groupId>com.in28minutes.springboot.web</groupId>
 	<artifactId>spring-boot-first-web-application-git</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<!-- As we need to deploy the project as WAR, this is needed -->
-	 <packaging>war</packaging>
+	
+	 <packaging>jar</packaging>
 	
 	
 	<name>spring-boot-first-web-application</name>
@@ -72,14 +72,6 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<dependency>
-			<!--Servlet container has to be set as provided -->
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-tomcat</artifactId>
-                         <scope>provided</scope>
-                </dependency>
-		
 	</dependencies>
 
 	<build>
