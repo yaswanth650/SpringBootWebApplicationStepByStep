@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.in28minutes.springboot.web")
-public class SpringBootFirstWebApplication {
+public class SpringBootFirstWebApplication  extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootFirstWebApplication.class, args);
