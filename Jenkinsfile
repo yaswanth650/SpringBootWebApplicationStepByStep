@@ -49,7 +49,7 @@ pipeline {
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@43.204.227.150:/prod/apache-tomcat-9.0.65/webapps/springbootfirstapplication.jar'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@43.204.227.150:/prod/apache-tomcat-9.0.65/webapps/springbootfirstapplication.war'
               }      
            }
      }
