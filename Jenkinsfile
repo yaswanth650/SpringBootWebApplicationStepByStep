@@ -49,7 +49,7 @@ pipeline {
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@65.0.96.236:/prod/apache-tomcat-9.0.65/webapps/springbootfirstwebapplication.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@13.127.121.234:/prod/apache-tomcat-9.0.65/webapps/springbootfirstwebapplication.jar'
               }      
            }
      }
@@ -57,7 +57,7 @@ pipeline {
      stage ('DAST') {
        steps {
           sshagent(['zap']) {
-            sh 'ssh -o  StrictHostKeyChecking=no ubuntu@65.0.93.23 "docker run -t owasp/zap2docker-stable zap-baseline.py -t https://65.0.96.236:8443/springbootfirstapplication/" || true'
+            sh 'ssh -o  StrictHostKeyChecking=no ubuntu@43.205.229.246 "docker run -t owasp/zap2docker-stable zap-baseline.py -t https://13.127.121.234:8443/springbootfirstapplication/" || true'
         }
       }
     }
